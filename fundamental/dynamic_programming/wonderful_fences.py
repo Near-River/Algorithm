@@ -19,7 +19,7 @@ n根木棒的总方案数是 Sum{ C[n][k][DOWN] + C[n][k][UP] }   k = 1.. n;
 
 
 class Solution(object):
-    def wonderful_fence(self, N, C):
+    def wonderful_fences(self, N, C):
         """
         :type N: int
         :type C: int
@@ -40,7 +40,7 @@ class Solution(object):
         ret = []
         used = [False] * (N + 1)  # 标记木棒是否使用过
         for i in range(1, N + 1):
-            no = 0  # 标记i根木棒中的第no短的木棒
+            no = 0  # 标记N-i+1根木棒中的第no短的木棒
             k = 1
             while k <= N:
                 skipped = 0  # 已经跳过的方案数
@@ -63,5 +63,5 @@ class Solution(object):
 
 if __name__ == '__main__':
     solution = Solution()
-    print(solution.wonderful_fence(3, 3))
-    print(solution.wonderful_fence(5, 5))
+    print(solution.wonderful_fences(3, 3))
+    print(solution.wonderful_fences(5, 5))
